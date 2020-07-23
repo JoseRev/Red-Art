@@ -1,0 +1,24 @@
+#  root@AP-10:/# cat /etc/config/wireless
+config wifi-device 'radio0'
+	option type 'mac80211'
+	option hwmode '11g'
+	option macaddr '00:15:6d:94:d9:69'
+	option country 'US'
+	option txpower '10'
+	option channel '11'
+
+config wifi-iface
+	option network 'wwan'
+	option ssid 'Red AP'
+	option device 'radio0'
+	option encryption 'none'
+	option mode 'ap'
+	option wds '1'
+
+config wifi-iface
+	option device 'radio0'
+	option mode 'ap'
+	option encryption 'none'
+	option ssid 'Red Vanguardia (Azul)'
+	option wds '1'
+	option network 'Azul'

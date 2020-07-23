@@ -1,0 +1,24 @@
+#  root@AP-20:/# cat /etc/config/wireless
+config wifi-device 'radio0'
+	option type 'mac80211'
+	option hwmode '11g'
+	option macaddr '00:15:6d:94:42:f4'
+	option country 'US'
+	option txpower '0'
+	option disabled '0'
+	option channel '11'
+
+config wifi-iface
+	option ssid 'Red AP'
+	option encryption 'none'
+	option device 'radio0'
+	option mode 'sta'
+	option network 'wwan'
+	option bssid '00:15:6D:94:D9:69'
+
+config wifi-iface
+	option device 'radio0'
+	option mode 'ap'
+	option encryption 'none'
+	option ssid 'Red Retaguardia (Verde)'
+	option network 'Verde'

@@ -1,0 +1,56 @@
+#  root@AP-20:/# cat /etc/config/network
+config interface 'loopback'
+	option ifname 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config interface 'lan'
+	option proto 'static'
+	option ifname 'eth0'
+	option netmask '255.255.255.0'
+	option ipaddr '10.20.0.1'
+
+config interface 'Verde'
+	option proto 'static'
+	option ipaddr '172.16.20.1'
+	option netmask '255.255.255.0'
+	option gateway '172.16.20.1'
+
+config route
+	option interface 'Verde'
+	option target '10.20.1.0'
+	option netmask '255.255.255.0'
+	option gateway '172.16.20.10'
+
+config route
+	option interface 'Verde'
+	option target '10.20.2.0'
+	option netmask '255.255.255.0'
+	option gateway '172.16.20.11'
+
+config route
+	option interface 'Verde'
+	option target '10.20.3.0'
+	option netmask '255.255.255.0'
+	option gateway '172.16.20.12'
+
+config route
+	option interface 'Verde'
+	option target '10.20.4.0'
+	option netmask '255.255.255.0'
+	option gateway '172.16.20.13'
+
+config route
+	option interface 'Verde'
+	option target '10.20.5.0'
+	option netmask '255.255.255.0'
+	option gateway '172.16.20.14'
+
+config interface 'wwan'
+	option _orig_ifname 'wlan0'
+	option _orig_bridge 'false'
+	option proto 'static'
+	option ipaddr '192.168.0.2'
+	option netmask '255.255.255.252'
+	option gateway '192.168.0.1'

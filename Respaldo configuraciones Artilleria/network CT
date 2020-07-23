@@ -1,0 +1,29 @@
+#  root@CT:/# cat /etc/config/network
+config interface 'loopback'
+	option ifname 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config interface 'lan'
+	option _orig_ifname 'eth0'
+	option _orig_bridge 'true'
+	option proto 'static'
+	option netmask '255.255.255.240'
+	option ipaddr '10.20.1.1'
+	option type 'bridge'
+	option ifname 'eth0'
+
+config interface 'wwan'
+	option _orig_ifname 'wlan0'
+	option _orig_bridge 'false'
+	option proto 'static'
+	option ipaddr '172.16.20.10'
+	option netmask '255.255.255.0'
+	option gateway '172.16.20.1'
+
+config route
+	option interface 'wwan'
+	option target '0.0.0.0'
+	option netmask '0.0.0.0'
+	option gateway '172.16.20.1'

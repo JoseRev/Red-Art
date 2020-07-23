@@ -1,0 +1,32 @@
+#  root@SF1:/# cat /etc/config/wireless
+config wifi-device 'radio0'
+	option type 'mac80211'
+	option channel '11'
+	option hwmode '11g'
+	option macaddr '00:15:6d:94:d9:5d'
+	option disabled '0'
+	option txpower '27'
+	option country 'US'
+
+config wifi-device 'radio1'
+	option type 'mac80211'
+	option hwmode '11g'
+	option macaddr '00:16:44:6c:8e:6d'
+	option txpower '20'
+	option country 'US'
+	option channel '1'
+
+config wifi-iface
+	option device 'radio1'
+	option mode 'ap'
+	option encryption 'none'
+	option network 'lan'
+	option ssid 'SF1'
+
+config wifi-iface
+	option ssid 'Red Retaguardia (Verde)'
+	option encryption 'none'
+	option device 'radio0'
+	option mode 'sta'
+	option network 'wwan'
+	option bssid '00:15:6D:94:42:F4'
