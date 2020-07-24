@@ -1,4 +1,5 @@
 #  root@OA2:/# cat /etc/config/wireless
+
 config wifi-device 'radio0'
 	option type 'mac80211'
 	option hwmode '11g'

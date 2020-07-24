@@ -1,5 +1,4 @@
 #  root@SF1:/# cat /etc/config/network
-
 config interface 'loopback'
 	option ifname 'lo'
 	option proto 'static'
