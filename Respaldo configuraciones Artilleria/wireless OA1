@@ -1,0 +1,33 @@
+#  root@OA1:/# cat /etc/config/wireless
+
+config wifi-device 'radio0'
+	option type 'mac80211'
+	option hwmode '11g'
+	option path 'pci0000:00/0000:00:01.0/0000:02:0e.0'
+	option country 'US'
+	option disabled '0'
+	option txpower '10'
+	option channel '11'
+
+config wifi-device 'radio1'
+	option type 'mac80211'
+	option hwmode '11g'
+	option path 'pci0000:00/0000:00:01.0/0000:02:0f.0'
+	option txpower '20'
+	option country 'US'
+	option channel '1'
+
+config wifi-iface
+	option device 'radio1'
+	option mode 'ap'
+	option encryption 'none'
+	option ssid 'OA1'
+	option network 'lan'
+
+config wifi-iface
+	option ssid 'Red Vanguardia (Azul)'
+	option encryption 'none'
+	option device 'radio0'
+	option mode 'sta'
+	option network 'wwan'
+	option bssid '02:15:6D:94:D9:6A'

@@ -1,0 +1,31 @@
+#  root@SF2:/# cat /etc/config/network
+config interface 'loopback'
+	option ifname 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config interface 'lan'
+	option type 'bridge'
+	option proto 'static'
+	option ip6assign '64'
+	option _orig_bridge 'true'
+	option _orig_ifname 'eth0 radio0.network1 wlan1'
+	option ifname 'eth0'
+	option netmask '255.255.255.240'
+	option ipaddr '10.20.3.1'
+
+config globals 'globals'
+	option ula_prefix 'fdc6:e58b:fce1::/48'
+
+config interface 'wwan'
+	option _orig_ifname 'wlan0'
+	option _orig_bridge 'false'
+	option proto 'static'
+	option netmask '255.255.255.224'
+
+config interface 'VERDE'
+	option proto 'static'
+	option netmask '255.255.255.224'
+	option gateway '172.16.20.1'
+	option ipaddr '172.16.20.12'
