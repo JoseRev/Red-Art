@@ -1,0 +1,32 @@
+#  root@OA3:/# cat /etc/config/wireless
+config wifi-device 'radio0'
+	option type 'mac80211'
+	option channel '11'
+	option hwmode '11g'
+	option macaddr '00:15:6d:94:d9:65'
+	option disabled '0'
+	option txpower '27'
+	option country 'US'
+
+config wifi-device 'radio1'
+	option type 'mac80211'
+	option channel '11'
+	option hwmode '11g'
+	option macaddr '00:16:44:6c:8e:83'
+	option txpower '20'
+	option country 'US'
+
+config wifi-iface
+	option device 'radio1'
+	option network 'lan'
+	option mode 'ap'
+	option encryption 'none'
+	option ssid 'OA3'
+
+config wifi-iface
+	option ssid 'Red Vanguardia (Azul)'
+	option encryption 'none'
+	option device 'radio0'
+	option mode 'sta'
+	option network 'wwan'
+	option bssid '02:15:6D:94:D9:6A'

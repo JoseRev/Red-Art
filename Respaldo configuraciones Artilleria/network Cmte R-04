@@ -1,0 +1,31 @@
+#  root@Cmte:/# cat /etc/config/network
+
+config interface 'loopback'
+	option ifname 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config interface 'lan'
+	option type 'bridge'
+	option proto 'static'
+	option ipaddr '10.20.4.1'
+	option netmask '255.255.255.240'
+	option ip6assign '64'
+	option _orig_ifname 'eth0 radio0.network1 wlan1'
+	option _orig_bridge 'true'
+	option ifname 'eth0'
+
+config interface 'wwan'
+	option _orig_ifname 'wlan0'
+	option _orig_bridge 'false'
+	option proto 'static'
+	option ipaddr '172.16.20.13'
+	option netmask '255.255.255.240'
+	option gateway '172.16.20.1'
+
+config route
+	option interface 'wwan'
+	option target '0.0.0.0'
+	option netmask '0.0.0.0'
+	option gateway '172.16.20.1'

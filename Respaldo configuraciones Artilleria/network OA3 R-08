@@ -1,0 +1,29 @@
+#  root@OA3:/# cat /etc/config/network
+config interface 'loopback'
+	option ifname 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.2'
+	option netmask '255.0.0.0'
+
+config interface 'lan'
+	option proto 'static'
+	option ipaddr '10.10.3.1'
+	option type 'bridge'
+	option _orig_ifname 'eth0 wlan0 wlan0-1'
+	option _orig_bridge 'true'
+	option ifname 'eth0'
+	option netmask '255.255.255.240'
+
+config interface 'wwan'
+	option _orig_ifname 'wlan0'
+	option _orig_bridge 'false'
+	option proto 'static'
+	option ipaddr '172.16.10.13'
+	option netmask '255.255.255.240'
+	option gateway '172.16.10.1'
+
+config route
+	option interface 'wwan'
+	option target '0.0.0.0'
+	option netmask '0.0.0.0'
+	option gateway '172.16.10.1'

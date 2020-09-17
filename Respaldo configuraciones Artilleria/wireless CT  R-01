@@ -1,0 +1,32 @@
+#  root@CT:/# cat /etc/config/wireless
+config wifi-device 'radio0'
+	option type 'mac80211'
+	option hwmode '11g'
+	option macaddr '00:15:6d:94:d9:5c'
+	option disabled '0'
+	option country 'US'
+	option txpower '4'
+	option channel '1'
+
+config wifi-device 'radio1'
+	option type 'mac80211'
+	option hwmode '11g'
+	option macaddr '00:11:f5:fd:23:88'
+	option channel '8'
+	option txpower '20'
+	option country 'US'
+
+config wifi-iface
+	option device 'radio1'
+	option mode 'ap'
+	option encryption 'none'
+	option network 'lan'
+	option ssid 'CT'
+
+config wifi-iface
+	option ssid 'Red Retaguardia (Verde)'
+	option encryption 'none'
+	option device 'radio0'
+	option mode 'sta'
+	option network 'wwan'
+	option bssid '00:15:6D:94:42:F4'
